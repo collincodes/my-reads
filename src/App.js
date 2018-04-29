@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom'
+import Header from './components/Header'
 import BookShelves from './components/BookShelves'
 import AllBooks from './components/AllBooks'
 import * as BooksAPI from './BooksAPI'
@@ -14,10 +15,20 @@ class BooksApp extends Component {
     return (
       <div>
         <Route exact path='/' render={() => (
-          <BookShelves />
+          <div className='home-page'>
+            <Header
+              goToPage='/books'
+            />
+            <BookShelves />
+          </div>
         )}/>
         <Route path='/books' render={() => (
-          <AllBooks />
+          <div className='book-directory'>
+            <Header
+              goToPage=''
+            />
+            <AllBooks />
+          </div>
         )}/>
       </div>
     )

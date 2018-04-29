@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
 
 class BookShelves extends Component {
   render() {
     return (
-      <div>
+      <div className='book-shelf'>
         BookShelves
       </div>
     )
