@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Link } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import Header from './components/Header'
 import BookShelves from './components/BookShelves'
 import AllBooks from './components/AllBooks'
@@ -7,11 +7,24 @@ import * as BooksAPI from './BooksAPI'
 import './App.css'
 
 class BooksApp extends Component {
+  // book keys
+  // title, authors, averageRating, categories, id, imageLinks[thumbnail], pageCount, previewLink, public, shelf, subtitle
+
   state = {
+    books: [],
     showSearchPage: false
   }
 
+  componentDidMount() {
+    BooksAPI.getAll().then((books) => {
+      this.setState({ books })
+      console.log(books)
+    })
+  }
+
   render() {
+    const { books } = this.state
+
     return (
       <div>
         <Route exact path='/' render={() => (
@@ -27,7 +40,9 @@ class BooksApp extends Component {
             <Header
               goToPage=''
             />
-            <AllBooks />
+            <AllBooks
+              books={ books }
+            />
           </div>
         )}/>
       </div>
