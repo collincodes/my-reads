@@ -6,7 +6,7 @@ import sortBy from 'sort-by'
 class AllBooks extends Component {
   // define proptypes here
   static propTypes = {
-    contacts: PropTypes.array.isRequired
+    books: PropTypes.array.isRequired
   }
 
   // set initial state for filter query
@@ -56,7 +56,7 @@ class AllBooks extends Component {
         <ol className='book-list'>
           {showingBooks.map((book, index) => (
             <li key={book.id} className='book'>
-              <img className='book-cover' src={book.imageLinks.thumbnail}/>
+              <img className='book-cover' src={book.imageLinks.thumbnail} alt={book.description}/>
               <h1 className='book-title'>{book.title}</h1>
               <h6 className='book-subtitle'>{book.subtitle}</h6>
               <h6 className='book-author'>{book.authors[0]}</h6>

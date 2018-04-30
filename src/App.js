@@ -15,6 +15,7 @@ class BooksApp extends Component {
     showSearchPage: false
   }
 
+  // get books api then set the state
   componentDidMount() {
     BooksAPI.getAll().then((books) => {
       this.setState({ books })
