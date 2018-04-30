@@ -1,13 +1,57 @@
+// main: main.sass
+
 @import 'variables'
 
 .all-books
+  .search-query
+    width: 100%
+    background-color: #d5d5d5
+    position: relative
+    &:before
+      content: ''
+      position: absolute
+      height: 2rem
+      width: 2rem
+      left: 2.5vw
+      top: 50%
+      transform: translateY(-50%)
+      +bg(1.5rem, center)
+      background-repeat: no-repeat
+      background-image: url('./icons/search.svg')
+    input
+      background-color: transparent
+      border: none
+      color: $primary
+      font-size: 1.25rem
+      padding: 1rem 5vw
+      width: 100%
+      border-bottom: 3px solid transparent
+      transition: 0.25s
+      &::placeholder
+        color: $primary
+        transition: 0.25s
+      &:focus
+        outline: none
+        border-bottom: 3px solid $primary
+        &::placeholder
+          opacity: 0
   .book-list
-    +flex(center, center)
+    +flex(flex-start, flex-start)
     flex-wrap: wrap
-    padding: 0 5vw
+    padding: 2rem 5vw
     list-style: none
     .book
       width: 25%
       text-align: center
+      padding: 0 2rem
+      margin-bottom: 2rem
+      img
+        height: 12rem
       h1
-        font-size: 1.5rem
+        font-size: 1.35rem
+      h6
+        margin: 0
+        font-size: 0.85rem
+      .book-subtitle
+        margin-bottom: 0.5rem
+        font-weight: 300
