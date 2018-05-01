@@ -25,7 +25,7 @@ class AllBooks extends Component {
   }
 
   render() {
-    const { books } = this.props
+    const { books, shelfChange } = this.props
     const { query } = this.state
 
     // initialize our showingBooks query
@@ -53,10 +53,18 @@ class AllBooks extends Component {
           />
         </div>
 
+        <h1 className='shelf-title'>Book Directory</h1>
         <ol className='book-list'>
           {showingBooks.map((book, index) => (
             <li key={book.id} className='book'>
-              <img className='book-cover' src={book.imageLinks.thumbnail} alt={book.description}/>
+              <div className='book-container' style={{ backgroundImage: `url(${book.imageLinks.thumbnail})` }}>
+                <select className='shelf-selection' defaultValue={book.shelf} onChange={(e) => shelfChange(book, e.target.value)}>
+                  <option disabled>Move Book to Category</option>
+                  <option value='currentlyReading'>Currently Reading</option>
+                  <option value='wantToRead'>Want to Read</option>
+                  <option value='read'>Read</option>
+                </select>
+              </div>
               <h1 className='book-title'>{book.title}</h1>
               <h6 className='book-subtitle'>{book.subtitle}</h6>
               <h6 className='book-author'>{book.authors[0]}</h6>

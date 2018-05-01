@@ -35,23 +35,40 @@
         border-bottom: 3px solid $primary
         &::placeholder
           opacity: 0
-  .book-list
-    +flex(flex-start, flex-start)
-    flex-wrap: wrap
-    padding: 2rem 5vw
-    list-style: none
-    .book
-      width: 25%
-      text-align: center
-      padding: 0 2rem
-      margin-bottom: 2rem
-      img
-        height: 12rem
-      h1
-        font-size: 1.35rem
-      h6
-        margin: 0
-        font-size: 0.85rem
-      .book-subtitle
-        margin-bottom: 0.5rem
-        font-weight: 300
+
+.book-list
+  +flex(flex-start, center)
+  flex-wrap: wrap
+  padding: 2rem 5vw
+  list-style: none
+  margin-bottom: 2rem
+  margin-top: 0
+  border-bottom: 1px solid grey
+  .book
+    width: 14.25%
+    text-align: left
+    padding: 0 2rem
+    margin: 0 0 2rem
+    .book-container
+      position: relative
+      height: 12rem
+      +bg(contain, center)
+      .shelf-selection
+        background-color: $primary
+        height: 2.25rem
+        width: 2.25rem
+        position: absolute
+        bottom: 0
+        right: 0
+        border: none
+        border-radius: 100%
+        background-image: url('./icons/arrow-drop-down.svg')
+        +bg(1.5rem, center)
+    h1
+      font-size: 1.35rem
+    h6
+      margin: 0
+      font-size: 0.85rem
+    .book-subtitle
+      margin-bottom: 0.5rem
+      font-weight: 300

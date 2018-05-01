@@ -1,116 +1,156 @@
 .home-page .header a {
-		background-image: url("./icons/add.svg");
+  background-image: url("./icons/add.svg");
 }
 
 .book-directory .header a {
-		background-image: url("./icons/arrow-back.svg");
+  background-image: url("./icons/arrow-back.svg");
 }
 
 .header {
-		background-color: #00656e;
-		text-align: center;
-		padding: 1rem 5vw;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
+  background-color: #00656e;
+  text-align: center;
+  padding: 1rem 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .header h1 {
-		margin: 0;
-		color: white;
-		font-weight: 300;
+  margin: 0;
+  color: white;
+  font-weight: 300;
 }
 
 .header h1 span {
-		font-weight: 400;
+  font-weight: 400;
 }
 
 .header a {
-		display: inline-block;
-		height: 4rem;
-		width: 4rem;
-		border-radius: 100%;
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: 2.5rem;
+  display: inline-block;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 2.5rem;
 }
 
 .all-books .search-query {
-		width: 100%;
-		background-color: #d5d5d5;
-		position: relative;
+  width: 100%;
+  background-color: #d5d5d5;
+  position: relative;
 }
 
 .all-books .search-query:before {
-		content: '';
-		position: absolute;
-		height: 2rem;
-		width: 2rem;
-		left: 2.5vw;
-		top: 50%;
-		transform: translateY(-50%);
-		background-size: 1.5rem;
-		background-position: center;
-		background-repeat: no-repeat;
-		background-repeat: no-repeat;
-		background-image: url("./icons/search.svg");
+  content: '';
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  left: 2.5vw;
+  top: 50%;
+  transform: translateY(-50%);
+  background-size: 1.5rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-repeat: no-repeat;
+  background-image: url("./icons/search.svg");
 }
 
 .all-books .search-query input {
-		background-color: transparent;
-		border: none;
-		color: #00656e;
-		font-size: 1.25rem;
-		padding: 1rem 5vw;
-		width: 100%;
-		border-bottom: 3px solid transparent;
-		transition: 0.25s;
+  background-color: transparent;
+  border: none;
+  color: #00656e;
+  font-size: 1.25rem;
+  padding: 1rem 5vw;
+  width: 100%;
+  border-bottom: 3px solid transparent;
+  transition: 0.25s;
 }
 
 .all-books .search-query input::placeholder {
-		color: #00656e;
-		transition: 0.25s;
+  color: #00656e;
+  transition: 0.25s;
 }
 
 .all-books .search-query input:focus {
-		outline: none;
-		border-bottom: 3px solid #00656e;
+  outline: none;
+  border-bottom: 3px solid #00656e;
 }
 
 .all-books .search-query input:focus::placeholder {
-		opacity: 0;
+  opacity: 0;
 }
 
-.all-books .book-list {
-		display: flex;
-		align-items: flex-start;
-		justify-content: flex-start;
-		flex-wrap: wrap;
-		padding: 2rem 5vw;
-		list-style: none;
+.book-list {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 2rem 5vw;
+  list-style: none;
+  margin-bottom: 2rem;
+  margin-top: 0;
+  border-bottom: 1px solid grey;
 }
 
-.all-books .book-list .book {
-		width: 25%;
-		text-align: center;
-		padding: 0 2rem;
-		margin-bottom: 2rem;
+.book-list .book {
+  width: 14.25%;
+  text-align: left;
+  padding: 0 2rem;
+  margin: 0 0 2rem;
 }
 
-.all-books .book-list .book img {
-		height: 12rem;
+.book-list .book .book-container {
+  position: relative;
+  height: 12rem;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.all-books .book-list .book h1 {
-		font-size: 1.35rem;
+.book-list .book .book-container .shelf-selection {
+  background-color: #00656e;
+  height: 2.25rem;
+  width: 2.25rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border: none;
+  border-radius: 100%;
+  background-image: url("./icons/arrow-drop-down.svg");
+  background-size: 1.5rem;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.all-books .book-list .book h6 {
-		margin: 0;
-		font-size: 0.85rem;
+.book-list .book h1 {
+  font-size: 1.35rem;
 }
 
-.all-books .book-list .book .book-subtitle {
-		margin-bottom: 0.5rem;
-		font-weight: 300;
+.book-list .book h6 {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.book-list .book .book-subtitle {
+  margin-bottom: 0.5rem;
+  font-weight: 300;
+}
+
+.book-shelf .shelf-title, .all-books .shelf-title {
+  text-align: center;
+  margin-bottom: 0;
+  font-weight: 300;
+}
+
+.book-shelf .shelf-selection, .all-books .shelf-selection {
+  color: transparent;
+}
+
+.book-shelf .shelf-selection option, .all-books .shelf-selection option {
+  color: white;
+}
+
+.book-shelf .shelf-selection option:disabled, .all-books .shelf-selection option:disabled {
+  color: grey;
 }
