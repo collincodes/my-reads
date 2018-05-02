@@ -5,7 +5,10 @@ class Header extends Component {
   render() {
     return (
       <div className='header'>
-        <h1><span>MyReads:</span> A Book Tracking Application</h1>
+        <div className='logo'>
+          <h1>my/reads</h1>
+          <h5>A Book Tracking Application</h5>
+        </div>
         <Link to={this.props.goToPage}></Link>
       </div>
     )

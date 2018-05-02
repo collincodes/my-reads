@@ -1,3 +1,7 @@
+html, body {
+  font-family: 'Source Serif Pro', serif !important;
+}
+
 .home-page .header a {
   background-image: url("./icons/add.svg");
 }
@@ -7,22 +11,30 @@
 }
 
 .header {
-  background-color: #00656e;
-  text-align: center;
+  background-color: #23293B;
   padding: 1rem 5vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: white;
 }
 
-.header h1 {
+.header .logo {
+  text-align: left;
+}
+
+.header .logo h1 {
   margin: 0;
-  color: white;
   font-weight: 300;
 }
 
-.header h1 span {
+.header .logo h1 span {
   font-weight: 400;
+}
+
+.header .logo h5 {
+  margin: 0;
+  font-size: 1rem;
 }
 
 .header a {
@@ -33,6 +45,10 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: 2.5rem;
+}
+
+html, body {
+  font-family: 'Source Serif Pro', serif !important;
 }
 
 .all-books .search-query {
@@ -59,7 +75,7 @@
 .all-books .search-query input {
   background-color: transparent;
   border: none;
-  color: #00656e;
+  color: #23293B;
   font-size: 1.25rem;
   padding: 1rem 5vw;
   width: 100%;
@@ -68,13 +84,13 @@
 }
 
 .all-books .search-query input::placeholder {
-  color: #00656e;
+  color: #23293B;
   transition: 0.25s;
 }
 
 .all-books .search-query input:focus {
   outline: none;
-  border-bottom: 3px solid #00656e;
+  border-bottom: 3px solid #23293B;
 }
 
 .all-books .search-query input:focus::placeholder {
@@ -84,18 +100,17 @@
 .book-list {
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   padding: 2rem 5vw;
   list-style: none;
   margin-bottom: 2rem;
   margin-top: 0;
-  border-bottom: 1px solid grey;
 }
 
 .book-list .book {
-  width: 14.25%;
-  text-align: left;
+  width: 20%;
+  text-align: center;
   padding: 0 2rem;
   margin: 0 0 2rem;
 }
@@ -109,12 +124,13 @@
 }
 
 .book-list .book .book-container .shelf-selection {
-  background-color: #00656e;
+  background-color: #23293B;
   height: 2.25rem;
   width: 2.25rem;
   position: absolute;
   bottom: 0;
   right: 0;
+  transform: translateX(50%) translateY(50%);
   border: none;
   border-radius: 100%;
   background-image: url("./icons/arrow-drop-down.svg");
@@ -138,9 +154,10 @@
 }
 
 .book-shelf .shelf-title, .all-books .shelf-title {
-  text-align: center;
+  text-align: left;
   margin-bottom: 0;
   font-weight: 300;
+  padding: 0 5vw;
 }
 
 .book-shelf .shelf-selection, .all-books .shelf-selection {
@@ -153,4 +170,25 @@
 
 .book-shelf .shelf-selection option:disabled, .all-books .shelf-selection option:disabled {
   color: grey;
+}
+
+.hero {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 25rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem 10vw;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+html, body {
+  font-family: 'Source Serif Pro', serif !important;
 }

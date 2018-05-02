@@ -37,16 +37,15 @@
           opacity: 0
 
 .book-list
-  +flex(flex-start, center)
+  +flex(flex-start, flex-start)
   flex-wrap: wrap
   padding: 2rem 5vw
   list-style: none
   margin-bottom: 2rem
   margin-top: 0
-  border-bottom: 1px solid grey
   .book
-    width: 14.25%
-    text-align: left
+    width: 20%
+    text-align: center
     padding: 0 2rem
     margin: 0 0 2rem
     .book-container
@@ -60,6 +59,7 @@
         position: absolute
         bottom: 0
         right: 0
+        transform: translateX(50%) translateY(50%)
         border: none
         border-radius: 100%
         background-image: url('./icons/arrow-drop-down.svg')

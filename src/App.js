@@ -3,8 +3,12 @@ import { Route } from 'react-router-dom'
 import Header from './components/Header'
 import BookShelves from './components/BookShelves'
 import AllBooks from './components/AllBooks'
+import Hero from './components/Hero'
 import * as BooksAPI from './BooksAPI'
 import './App.css'
+
+// import backgrounds
+import backgroundOne from './assets/background-1.jpg'
 
 class BooksApp extends Component {
   // book keys
@@ -41,6 +45,9 @@ class BooksApp extends Component {
           <div className='home-page'>
             <Header
               goToPage='/books'
+            />
+            <Hero
+              image={ backgroundOne }
             />
             <BookShelves
               books={ books }
