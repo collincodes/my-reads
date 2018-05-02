@@ -14,10 +14,11 @@ class BookShelves extends Component {
               <li key={book.id} className='book'>
                 <div className='book-container' style={{ backgroundImage: `url(${book.imageLinks.thumbnail})` }}>
                   <select className='shelf-selection' defaultValue={book.shelf} onChange={(e) => shelfChange(book, e.target.value)}>
-                    <option disabled>Move Book to Category</option>
+                    <option disabled>Move Book to Shelf</option>
                     <option value='currentlyReading'>Currently Reading</option>
                     <option value='wantToRead'>Want to Read</option>
                     <option value='read'>Read</option>
+                    <option value='noShelf'>None</option>
                   </select>
                 </div>
                 <h1 className='book-title'>{book.title}</h1>
@@ -34,10 +35,11 @@ class BookShelves extends Component {
               <li key={book.id} className='book'>
                 <div className='book-container' style={{ backgroundImage: `url(${book.imageLinks.thumbnail})` }}>
                   <select className='shelf-selection' defaultValue={book.shelf} onChange={(e) => shelfChange(book, e.target.value)}>
-                    <option disabled>Move Book to Category</option>
+                    <option disabled>Move Book to Shelf</option>
                     <option value='currentlyReading'>Currently Reading</option>
                     <option value='wantToRead'>Want to Read</option>
                     <option value='read'>Read</option>
+                    <option value='noShelf'>None</option>
                   </select>
                 </div>
                 <h1 className='book-title'>{book.title}</h1>
@@ -54,10 +56,11 @@ class BookShelves extends Component {
               <li key={book.id} className='book'>
                 <div className='book-container' style={{ backgroundImage: `url(${book.imageLinks.thumbnail})` }}>
                   <select className='shelf-selection' defaultValue={book.shelf} onChange={(e) => shelfChange(book, e.target.value)}>
-                    <option disabled>Move Book to Category</option>
+                    <option disabled>Move Book to Shelf</option>
                     <option value='currentlyReading'>Currently Reading</option>
                     <option value='wantToRead'>Want to Read</option>
                     <option value='read'>Read</option>
+                    <option value='noShelf'>None</option>
                   </select>
                 </div>
                 <h1 className='book-title'>{book.title}</h1>
