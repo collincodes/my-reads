@@ -4,11 +4,13 @@ import Header from './components/Header'
 import BookShelves from './components/BookShelves'
 import AllBooks from './components/AllBooks'
 import Hero from './components/Hero'
+import Footer from './components/Footer'
 import * as BooksAPI from './BooksAPI'
 import './App.css'
 
 // import backgrounds
 import backgroundOne from './assets/background-1.jpg'
+import backgroundTwo from './assets/background-2.jpg'
 
 class BooksApp extends Component {
   // book keys
@@ -60,12 +62,16 @@ class BooksApp extends Component {
             <Header
               goToPage=''
             />
+            <Hero
+              image={ backgroundTwo }
+            />
             <AllBooks
               books={ books }
               shelfChange={ shelfChange }
             />
           </div>
         )}/>
+        <Footer />
       </div>
     )
   }

@@ -5,11 +5,11 @@ class Header extends Component {
   render() {
     return (
       <div className='header'>
-        <div className='logo'>
+        <Link className='logo' to=''>
           <h1>my/reads</h1>
           <h5>A Book Tracking Application</h5>
-        </div>
-        <Link to={this.props.goToPage}></Link>
+        </Link>
+        <Link className='icon' to={this.props.goToPage}></Link>
       </div>
     )
   }

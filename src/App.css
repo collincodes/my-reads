@@ -2,11 +2,11 @@ html, body {
   font-family: 'Source Serif Pro', serif !important;
 }
 
-.home-page .header a {
+.home-page .header .icon {
   background-image: url("./icons/add.svg");
 }
 
-.book-directory .header a {
+.book-directory .header .icon {
   background-image: url("./icons/arrow-back.svg");
 }
 
@@ -21,6 +21,8 @@ html, body {
 
 .header .logo {
   text-align: left;
+  color: white;
+  text-decoration: none;
 }
 
 .header .logo h1 {
@@ -37,7 +39,7 @@ html, body {
   font-size: 1rem;
 }
 
-.header a {
+.header .icon {
   display: inline-block;
   height: 4rem;
   width: 4rem;
@@ -45,6 +47,24 @@ html, body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 2.5rem;
+}
+
+.footer {
+  background-color: #23293B;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 10vw;
+}
+
+.footer h6 {
+  margin: 0;
+}
+
+.footer a {
+  color: white;
 }
 
 html, body {
