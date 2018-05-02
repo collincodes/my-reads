@@ -32,7 +32,7 @@ class AllBooks extends Component {
     let showingBooks
     if (query) {
       const match = new RegExp(escapeRegExp(query), 'i')
-      showingBooks = books.filter((book) => match.test(books.title))
+      showingBooks = books.filter((book) => match.test(book.authors))
     } else {
       showingBooks = books
     }
