@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import escapeRegExp from 'escape-string-regexp'
+// import escapeRegExp from 'escape-string-regexp'
 import sortBy from 'sort-by'
+import * as BooksAPI from '../BooksAPI'
 
 class AllBooks extends Component {
   // define proptypes here
@@ -11,28 +12,29 @@ class AllBooks extends Component {
 
   // set initial state for filter query
   state = {
-    query: ''
+    query: '',
+    searched: []
   }
 
   // function to update the state for filter
   updateQuery = (query) => {
-    this.setState({ query: query.trim() })
-  }
+    this.setState({ query: query })
 
-  // function to reset the state
-  clearQuery = () => {
-    this.setState({ query: '' })
+    if (query) {
+      BooksAPI.search(query).then((response) => this.setState({
+        searched: response
+      }))
+    }
   }
 
   render() {
     const { books, shelfChange } = this.props
-    const { query } = this.state
+    const { query, searched } = this.state
 
     // initialize our showingBooks query
     let showingBooks
-    if (query) {
-      const match = new RegExp(escapeRegExp(query), 'i')
-      showingBooks = books.filter((b) => match.test(b.title))
+    if (query && !searched.error) {
+      showingBooks = searched
     } else {
       showingBooks = books
     }
@@ -57,7 +59,7 @@ class AllBooks extends Component {
         <ol className='book-list'>
           {showingBooks.map((book, index) => (
             <li key={book.id} className='book'>
-              <div className='book-container' style={{ backgroundImage: `url(${book.imageLinks.thumbnail})` }}>
+              <div className='book-container' style={{ backgroundImage: book.imageLinks !== undefined ? `url(${book.imageLinks.thumbnail})` : null }}>
                 <select className='shelf-selection' defaultValue={book.shelf} onChange={(e) => shelfChange(book, e.target.value)}>
                   <option disabled>Move Book to Shelf</option>
                   <option value='currentlyReading'>Currently Reading</option>
@@ -68,7 +70,8 @@ class AllBooks extends Component {
               </div>
               <h1 className='book-title'>{book.title}</h1>
               <h6 className='book-subtitle'>{book.subtitle}</h6>
-              <h6 className='book-author'>{book.authors[0]}</h6>
+              <h6 className='book-author'>{book.authors !== undefined ? book.authors : null}</h6>
+              {JSON.stringify(books.authors)}
             </li>
           ))}
         </ol>

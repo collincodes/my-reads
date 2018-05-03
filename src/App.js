@@ -28,10 +28,16 @@ class BooksApp extends Component {
     })
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    BooksAPI.getAll().then((books) => {
+      this.setState({ books })
+    })
+  }
+
   shelfChange = (book, shelf) => {
     BooksAPI.update(book, shelf).then((books) => {
       book.shelf = shelf
-      this.setState( books )
+      this.setState([ books ])
     })
   }
 

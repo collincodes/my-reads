@@ -12,7 +12,7 @@ class BookShelves extends Component {
           <ol className='current-books book-list'>
             {books.filter( b => b.shelf === 'currentlyReading' ).map( (book, index) => (
               <li key={book.id} className='book'>
-                <div className='book-container' style={{ backgroundImage: `url(${book.imageLinks.thumbnail})` }}>
+                <div className='book-container' style={{ backgroundImage: book.imageLinks !== undefined ? `url(${book.imageLinks.thumbnail})` : null }}>
                   <select className='shelf-selection' defaultValue={book.shelf} onChange={(e) => shelfChange(book, e.target.value)}>
                     <option disabled>Move Book to Shelf</option>
                     <option value='currentlyReading'>Currently Reading</option>
@@ -23,7 +23,7 @@ class BookShelves extends Component {
                 </div>
                 <h1 className='book-title'>{book.title}</h1>
                 <h6 className='book-subtitle'>{book.subtitle}</h6>
-                <h6 className='book-author'>{book.authors[0]}</h6>
+                <h6 className='book-author'>{book.authors !== undefined ? book.authors : null}</h6>
               </li>
             ))}
           </ol>
@@ -33,7 +33,7 @@ class BookShelves extends Component {
           <ol className='want-books book-list'>
             {books.filter( b => b.shelf === 'wantToRead' ).map( (book, index) => (
               <li key={book.id} className='book'>
-                <div className='book-container' style={{ backgroundImage: `url(${book.imageLinks.thumbnail})` }}>
+                <div className='book-container' style={{ backgroundImage: book.imageLinks !== undefined ? `url(${book.imageLinks.thumbnail})` : null }}>
                   <select className='shelf-selection' defaultValue={book.shelf} onChange={(e) => shelfChange(book, e.target.value)}>
                     <option disabled>Move Book to Shelf</option>
                     <option value='currentlyReading'>Currently Reading</option>
@@ -44,7 +44,7 @@ class BookShelves extends Component {
                 </div>
                 <h1 className='book-title'>{book.title}</h1>
                 <h6 className='book-subtitle'>{book.subtitle}</h6>
-                <h6 className='book-author'>{book.authors[0]}</h6>
+                <h6 className='book-author'>{book.authors !== undefined ? book.authors : null}</h6>
               </li>
             ))}
           </ol>
@@ -54,7 +54,7 @@ class BookShelves extends Component {
           <ol className='read-books book-list'>
             {books.filter( b => b.shelf === 'read' ).map( (book, index) => (
               <li key={book.id} className='book'>
-                <div className='book-container' style={{ backgroundImage: `url(${book.imageLinks.thumbnail})` }}>
+                <div className='book-container' style={{ backgroundImage: book.imageLinks !== undefined ? `url(${book.imageLinks.thumbnail})` : null }}>
                   <select className='shelf-selection' defaultValue={book.shelf} onChange={(e) => shelfChange(book, e.target.value)}>
                     <option disabled>Move Book to Shelf</option>
                     <option value='currentlyReading'>Currently Reading</option>
@@ -65,7 +65,7 @@ class BookShelves extends Component {
                 </div>
                 <h1 className='book-title'>{book.title}</h1>
                 <h6 className='book-subtitle'>{book.subtitle}</h6>
-                <h6 className='book-author'>{book.authors[0]}</h6>
+                <h6 className='book-author'>{book.authors !== undefined ? book.authors : null}</h6>
               </li>
             ))}
           </ol>
